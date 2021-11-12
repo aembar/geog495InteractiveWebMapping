@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Interactive Web Mapping</title>
+    <title>Washington COVID Cases Interactive Web Map</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
@@ -79,7 +79,7 @@
 <body>
     <div id="map"></div>
     <div class='map-overlay' id='features'>
-        <h2>US population casePer10k</h2>
+        <h2>WA COVID cases Per 10k</h2>
         <div id='text-escription'>
             <p>Hover over a state!</p>
         </div>
@@ -91,8 +91,8 @@
         const map = new mapboxgl.Map({
             container: 'map', 
             style: 'mapbox://styles/mapbox/light-v10',
-            zoom: 3, 
-            center: [-100, 40] 
+            zoom: 6, 
+            center: [-120, 47] 
         });
 
         async function geojsonFetch() {
@@ -113,46 +113,45 @@
                         'fill-color': [
                             'step',
                             ['get', 'casePer10k'],
-                            '#FFEDA0',   // stop_output_0
-                            10,          // stop_input_0
-                            '#FED976',   // stop_output_1
-                            20,          // stop_input_1
-                            '#FEB24C',   // stop_output_2
-                            50,          // stop_input_2
-                            '#FD8D3C',   // stop_output_3
-                            100,         // stop_input_3
-                            '#FC4E2A',   // stop_output_4
-                            200,         // stop_input_4
-                            '#E31A1C',   // stop_output_5
-                            500,         // stop_input_5
-                            '#BD0026',   // stop_output_6
-                            1000,        // stop_input_6
-                            "#800026"    // stop_output_7
+                            '#D9EAD3',   // stop_output_0
+                            501,          // stop_input_0
+                            '#B6D7A8',   // stop_output_1
+                            601,          // stop_input_1
+                            '#93C47D',   // stop_output_2
+                            701,          // stop_input_2
+                            '#6AA84F',   // stop_output_3
+                            901,         // stop_input_3
+                            '#38761D',   // stop_output_4
+                            1101,         // stop_input_4
+                            '#45818E',   // stop_output_5
+                            1301,         // stop_input_5
+                            '#134F5C',   // stop_output_6
+                            1501,        // stop_input_6
+                            "#0C343D"    // stop_output_7
                         ],
                         'fill-outline-color': '#BBBBBB',
                         'fill-opacity': 0.7,
                     }
                 });
-
                 const layers = [
-                    '0-9',
-                    '10-19',
-                    '20-49',
-                    '50-99',
-                    '100-199',
-                    '200-499',
-                    '500-999',
-                    '1000 and more'
+                    '0-500',
+                    '501-600',
+                    '601-700',
+                    '701-900',
+                    '901-1100',
+                    '1101-1300',
+                    '1301-1500',
+                    '1501 and more'
                 ];
                 const colors = [
-                    '#FFEDA070',
-                    '#FED97670',
-                    '#FEB24C70',
-                    '#FD8D3C70',
-                    '#FC4E2A70',
-                    '#E31A1C70',
-                    '#BD002670',
-                    '#80002670'
+                    '#D9EAD370',
+                    '#B6D7A870',
+                    '#93C47D70',
+                    '#6AA84F70',
+                    '#38761D70',
+                    '#45818E70',
+                    '#134F5C70',
+                    '#0C343D70'
                 ];
 
                 const legend = document.getElementById('legend');
