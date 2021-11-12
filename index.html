@@ -113,24 +113,24 @@
                         'fill-color': [
                             'step',
                             ['get', 'casePer10k'],
-                            '#D9EAD3',   // stop_output_0
+                            '#ffffcc',   // stop_output_0
                             501,          // stop_input_0
-                            '#B6D7A8',   // stop_output_1
+                            '#ffeda0',   // stop_output_1
                             601,          // stop_input_1
-                            '#93C47D',   // stop_output_2
+                            '#fed976',   // stop_output_2
                             701,          // stop_input_2
-                            '#6AA84F',   // stop_output_3
+                            '#feb24c',   // stop_output_3
                             901,         // stop_input_3
-                            '#38761D',   // stop_output_4
+                            '#fd8d3c',   // stop_output_4
                             1101,         // stop_input_4
-                            '#45818E',   // stop_output_5
+                            '#fc4e2a',   // stop_output_5
                             1301,         // stop_input_5
-                            '#134F5C',   // stop_output_6
+                            '#e31a1c',   // stop_output_6
                             1501,        // stop_input_6
-                            "#0C343D"    // stop_output_7
+                            "#b10026"    // stop_output_7
                         ],
                         'fill-outline-color': '#BBBBBB',
-                        'fill-opacity': 0.7,
+                        'fill-opacity': 0.9,
                     }
                 });
                 const layers = [
@@ -144,14 +144,14 @@
                     '1501 and more'
                 ];
                 const colors = [
-                    '#D9EAD370',
-                    '#B6D7A870',
-                    '#93C47D70',
-                    '#6AA84F70',
-                    '#38761D70',
-                    '#45818E70',
-                    '#134F5C70',
-                    '#0C343D70'
+                    '#ffffcc90',
+                    '#ffeda090',
+                    '#fed97690',
+                    '#feb24c90',
+                    '#fd8d3c90',
+                    '#fc4e2a90',
+                    '#e31a1c90',
+                    '#b1002690'
                 ];
 
                 const legend = document.getElementById('legend');
@@ -164,6 +164,10 @@
                     const key = document.createElement('span');
                     key.className = 'legend-key';
                     key.style.backgroundColor = color;
+                    key.style.borderColor = "black";
+                    //key.style.border = "1px";
+                    key.style.borderWidth = "1px";
+
 
                     const value = document.createElement('span');
                     value.innerHTML = `${layer}`;
